@@ -1,0 +1,761 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_access_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-31 06:59+0000\n"
+"PO-Revision-Date: 2026-10-31 06:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "%(v4)s IPv4 / %(v6)s IPv6"
+msgstr "%(v4)s 段 IPv4 / %(v6)s 段 IPv6"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_rule.py:0
+msgid "'%s' is not a two-letter country code."
+msgstr "“%s”不是两位字母的国家/地区代码。"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+#: code:addons/website_access_control/models/access_rule.py:0
+msgid "'%s' is not a valid IP address or network."
+msgstr "“%s”不是有效的 IP 地址或网段。"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "/shop/payment/webhook"
+msgstr "/shop/payment/webhook"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_list
+msgid "1.2.3.4 / 1.2.3.0/24 / CN"
+msgstr "1.2.3.4 / 1.2.3.0/24 / CN"
+
+#. module: website_access_control
+#: model_terms:ir.actions.act_window,help:website_access_control.action_website_access_rule
+msgid ""
+"<b>Allow</b> rules let an IP, a network or a country through even inside a blocked region,\n"
+"                e.g. the office internet connection. <b>Block</b> rules block an IP, a network or a country\n"
+"                that is not covered by the blocked regions."
+msgstr ""
+"<b>放行</b>规则让某个 IP、网段或国家即使在拦截地区内也能访问，例如公司办公网络的出口 IP。<b>拦截</b>规则用于拦截拦截地区以外的 "
+"IP、网段或国家，例如某个同行的出口 IP。"
+
+#. module: website_access_control
+#: model:ir.ui.menu,name:website_access_control.menu_access_control_root
+msgid "Access Control"
+msgstr "访问控制"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+#: model:ir.actions.act_window,name:website_access_control.action_website_access_config
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Access Control Settings"
+msgstr "访问控制设置"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__access_url
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__grant_id
+msgid "Access Link"
+msgstr "放行链接"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_log__decision__link_granted
+msgid "Access Link Opened"
+msgstr "打开放行链接"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__cookie_days
+msgid "Access Link Validity (days)"
+msgstr "放行有效期(天)"
+
+#. module: website_access_control
+#: model:ir.actions.act_window,name:website_access_control.action_website_access_grant
+#: model:ir.ui.menu,name:website_access_control.menu_access_control_grants
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_grant_view_list
+msgid "Access Links"
+msgstr "放行链接"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_form
+msgid "Access Log"
+msgstr "拦截日志"
+
+#. module: website_access_control
+#: model:ir.actions.act_window,name:website_access_control.action_website_access_log
+#: model:ir.ui.menu,name:website_access_control.menu_access_control_logs
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_list
+msgid "Access Logs"
+msgstr "拦截日志"
+
+#. module: website_access_control
+#: model:ir.actions.act_window,name:website_access_control.action_website_access_rule
+#: model:ir.ui.menu,name:website_access_control.menu_access_control_rules
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_list
+msgid "Access Rules"
+msgstr "访问规则"
+
+#. module: website_access_control
+#: model_terms:ir.actions.act_window,help:website_access_control.action_website_access_grant
+msgid "Add an access link"
+msgstr "新建放行链接"
+
+#. module: website_access_control
+#: model_terms:ir.actions.act_window,help:website_access_control.action_website_access_rule
+msgid "Add an access rule"
+msgstr "添加一条访问规则"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_log__peer_ip
+msgid ""
+"Address of the CDN or proxy that forwarded the request, when it differs from"
+" the visitor IP."
+msgstr "转发该请求的 CDN 或代理服务器地址(与访客 IP 不同时才显示)。"
+
+#. module: website_access_control
+#: model:res.groups,name:website_access_control.group_access_admin
+msgid "Administrator"
+msgstr "管理员"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Advanced"
+msgstr "高级"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Ali-CDN-Real-IP"
+msgstr "Ali-CDN-Real-IP"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_rule__rule_type__allow
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_search
+msgid "Allow"
+msgstr "放行"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_rule__rule_type
+msgid "Allow rules always win over block rules and blocked regions."
+msgstr "放行规则永远优先于拦截规则和拦截地区。"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Allowed"
+msgstr "已放行"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_log__decision__allowed_link
+msgid "Allowed by Access Link"
+msgstr "放行链接放行"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_log__decision__allowed_rule
+msgid "Allowed by Rule"
+msgstr "规则放行"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__block_zh_browser
+msgid ""
+"Also block anonymous visitors whose browser asks for Chinese pages (Accept-"
+"Language contains 'zh'), whatever their IP. Catches competitors behind a "
+"foreign VPN, but also blocks overseas Chinese-speaking visitors: check the "
+"logs in Log Only mode before enabling it for real."
+msgstr ""
+"无论 IP 在哪，只要未登录访客的浏览器请求中文页面(Accept-Language 含 zh)就一并拦截。能抓到挂海外 VPN "
+"的同行，但也会误伤海外的中文访客：建议先在“仅记录”模式下观察日志，确认没有误伤再正式开启。"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_rule__value
+msgid ""
+"An IP address (1.2.3.4), a network in CIDR notation (1.2.3.0/24, 240e::/20) "
+"or a two-letter country code (CN, HK, US...)."
+msgstr ""
+"IP 地址(1.2.3.4)、CIDR 网段(1.2.3.0/24、240e::/20)或两位字母的国家/地区代码(CN、HK、US……)。"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_config__mode__block
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_rule__rule_type__block
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_search
+msgid "Block"
+msgstr "拦截"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_zh_browser
+msgid "Block Chinese-language Browsers"
+msgstr "拦截中文浏览器访客"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Block Page"
+msgstr "拦截页面"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_message
+msgid "Block Page Message"
+msgstr "拦截页内容"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_title
+msgid "Block Page Title"
+msgstr "拦截页标题"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_log__decision__blocked
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Blocked"
+msgstr "已拦截"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Blocked Regions"
+msgstr "拦截地区"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid ""
+"Blocks Chinese-language browsers whatever their IP, even behind a\n"
+"                                foreign VPN. May also hit overseas Chinese-speaking visitors: check\n"
+"                                the logs in Log Only mode first."
+msgstr "无论 IP 在哪都拦截中文浏览器，挂海外 VPN 也拦得住；但可能误伤海外中文访客，建议先用“仅记录”模式看日志。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__user_agent
+msgid "Browser"
+msgstr "浏览器"
+
+#. module: website_access_control
+#: model:res.groups,comment:website_access_control.group_access_admin
+msgid ""
+"Can open the Access Control menus of the Website app and change the "
+"settings, rules and logs."
+msgstr "可以打开网站应用中的“访问控制”菜单，修改设置、访问规则和拦截日志。"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "Chinese-language browser"
+msgstr "中文浏览器"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__current_peer_ip
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__peer_ip
+msgid "Connection Address"
+msgstr "连接来源地址"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "Could not download the IP data from APNIC: %s"
+msgstr "无法从 APNIC 下载 IP 数据：%s"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_rule__match_type__country
+msgid "Country / Region"
+msgstr "国家/地区"
+
+#. module: website_access_control
+#: model_terms:ir.actions.act_window,help:website_access_control.action_website_access_grant
+msgid ""
+"Create one link per person and send it to them. Opening the link once lets that\n"
+"               person browse the website from a blocked region. Disabling a link revokes only\n"
+"               that person, the others keep working."
+msgstr "为每个人新建一条链接并发给对方。对方打开一次后，就能在拦截地区访问网站。停用某条链接只吊销这一个人，其他人不受影响。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__create_uid
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__create_uid
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__create_uid
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__create_uid
+msgid "Created by"
+msgstr "创建人"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__create_date
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__create_date
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__create_date
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Date"
+msgstr "日期"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Day"
+msgstr "日"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__decision
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Decision"
+msgstr "判定结果"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_search
+msgid "Disabled"
+msgstr "已停用"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_ir_http__display_name
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__display_name
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__display_name
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__display_name
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__enabled
+msgid "Enable Access Control"
+msgstr "启用访问控制"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__enabled
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__enabled
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_search
+msgid "Enabled"
+msgstr "启用"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__exempt_paths
+msgid "Extra Exempt Paths"
+msgstr "额外豁免路径"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__no_store_pages
+msgid "Forbid CDN Caching of Pages"
+msgstr "禁止 CDN 缓存网页"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "General"
+msgstr "基本设置"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__name
+msgid "Granted To"
+msgstr "放行对象"
+
+#. module: website_access_control
+#: model:ir.model,name:website_access_control.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTP 路由"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__real_ip_header
+msgid ""
+"HTTP header carrying the visitor IP when the website is behind a CDN or "
+"proxy, e.g. Ali-CDN-Real-IP for Alibaba Cloud CDN. Prefer a header the CDN "
+"overwrites on every request (Ali-CDN-Real-IP, X-Real-IP, CF-Connecting-IP). "
+"When the header holds several addresses, the rightmost public one is used, "
+"because a visitor can forge the left part of X-Forwarded-For. The header is "
+"only read on requests coming from a Trusted Proxy. Leave empty to use the "
+"connection address, as corrected by proxy_mode."
+msgstr ""
+"网站在 CDN 或代理后面时，携带访客真实 IP 的请求头，阿里云 CDN 填 Ali-CDN-Real-IP。优先使用 CDN "
+"每次都会覆盖写入的头(Ali-CDN-Real-IP、X-Real-IP、CF-Connecting-"
+"IP)。请求头里有多个地址时取最右侧的公网地址，因为 X-Forwarded-For 左侧的内容访客可以伪造。只有来自“受信任代理”的请求才会读取该请求头。留空则使用连接地址(启用 "
+"proxy_mode 时为其修正后的地址)。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__hit_count
+msgid "Hits"
+msgstr "命中次数"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_hk
+msgid "Hong Kong"
+msgstr "中国香港"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_ir_http__id
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__id
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__id
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__id
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_rule__match_type__ip
+msgid "IP / Network"
+msgstr "IP / 网段"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "IP Data"
+msgstr "IP 数据"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__ip_data_date
+msgid "IP Data Date"
+msgstr "IP 数据日期"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "IP data updated (%(date)s): %(count)s Mainland China ranges."
+msgstr "IP 数据已更新(%(date)s)：中国大陆共 %(count)s 个网段。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__log_retention_days
+msgid "Keep Logs (days)"
+msgstr "日志保留(天)"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__last_hit
+msgid "Last Hit"
+msgstr "最近命中"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__write_uid
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__write_uid
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__write_uid
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__write_uid
+msgid "Last Updated by"
+msgstr "最后更新人"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__write_date
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__write_date
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__write_date
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__write_date
+msgid "Last Updated on"
+msgstr "最后更新时间"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__last_used
+msgid "Last Visit"
+msgstr "最近使用"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_config__mode__log
+msgid "Log Only"
+msgstr "仅记录"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__mode
+msgid ""
+"Log Only: visitors are never blocked, but the visits that would be blocked "
+"are logged. Use it right after going live to check the decisions, then "
+"switch to Block."
+msgstr "仅记录：不拦截任何访客，只把本应拦截的访问记入日志。上线初期先用此模式核对判定是否正确，确认无误后再切换为“拦截”。"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid ""
+"Logged-in employees are never blocked. For other visitors the checks are, in order:\n"
+"                        allow rules → access link → block rules and blocked regions → everyone else is let through.\n"
+"                        The login page, backend, portal (/my) and payment callbacks are always reachable."
+msgstr ""
+"已登录的员工永远不会被拦截。其他访客依次判定：放行规则 → 放行链接 → 拦截规则和拦截地区 → "
+"其余全部放行。登录页、后台、门户(/my)和支付回调始终可以访问。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_mo
+msgid "Macao"
+msgstr "中国澳门"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_cn
+msgid "Mainland China"
+msgstr "中国大陆"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__ip_cn_count
+msgid "Mainland China Ranges"
+msgstr "中国大陆网段数"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Manage Access Links"
+msgstr "管理放行链接"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__match_type
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_search
+msgid "Match"
+msgstr "匹配方式"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__mode
+msgid "Mode"
+msgstr "运行模式"
+
+#. module: website_access_control
+#: model_terms:ir.actions.act_window,help:website_access_control.action_website_access_log
+msgid "No visit has been blocked yet"
+msgstr "还没有被拦截的访问"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__name
+msgid "Note"
+msgstr "备注"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid ""
+"One link per person. Disabling a link revokes only that person,\n"
+"                                the others keep working."
+msgstr "每人一条链接；停用某条只吊销这一个人，其他人不受影响。"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__exempt_paths
+msgid ""
+"One path per line (e.g. /shop/payment/webhook). Requests to these paths and "
+"their sub-paths are never blocked, in addition to the login page, backend, "
+"portal and payment callbacks."
+msgstr ""
+"每行一个路径(例如 /shop/payment/webhook)。这些路径及其子路径永远不拦截；登录页、后台、门户和支付回调已默认豁免，无需填写。"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid ""
+"Open this page through the public domain and check that \"Your IP As Seen\" is your real\n"
+"                                public IP, not the address of the CDN, before switching to Block mode.\n"
+"                                Make sure as well that the server only accepts connections from the CDN."
+msgstr "切换到“拦截”模式前，请通过正式域名打开本页面，确认“识别到的你的 IP”是你真实的公网 IP，而不是 CDN 节点的地址。同时请确保服务器只接受来自 CDN 的连接。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__real_ip_header
+msgid "Real IP Header"
+msgstr "真实 IP 请求头"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "One CDN back-to-origin address or network per line"
+msgstr "每行一个 CDN 回源地址或网段"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid ""
+"The Real IP Header is ignored until Trusted Proxies is filled in: add the\n"
+"                                addresses the CDN connects from (see \"Connection Address\" below)."
+msgstr "填写“受信任代理”之前，真实 IP 请求头不会生效：请填入 CDN 回源连接使用的地址(参见下方的“连接地址”)。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__trusted_proxies
+msgid "Trusted Proxies"
+msgstr "受信任代理"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__trusted_proxies
+msgid ""
+"Addresses or networks (CIDR) of the CDN or proxy that connects to Odoo, one "
+"per line, e.g. the back-to-origin ranges of the CDN. The Real IP Header is "
+"only read on requests whose Connection Address is in this list: anyone else "
+"reaching the server directly could put any address in that header. When "
+"empty, the header is ignored."
+msgstr ""
+"连接到 Odoo 的 CDN 或代理的地址或网段(CIDR)，每行一个，例如 CDN 的回源 IP 段。只有“连接地址”在此列表中的请求才会读取真实 IP "
+"请求头：其他直接访问服务器的人可以在该请求头里随意填写地址。留空则忽略该请求头。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__reason
+msgid "Reason"
+msgstr "原因"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__country_code
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Region"
+msgstr "地区"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "Region %s"
+msgstr "地区 %s"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid ""
+"Region data comes from APNIC and is refreshed automatically every month."
+msgstr "地区数据来自亚太互联网络信息中心(APNIC)，每月自动更新。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__rule_id
+msgid "Rule"
+msgstr "规则"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__no_store_pages
+msgid ""
+"Send 'Cache-Control: no-store, private' on website pages, so a CDN cannot "
+"serve a cached page to a blocked visitor without asking the server."
+msgstr ""
+"网站页面返回“Cache-Control: no-store, private”，防止 CDN 不经过服务器直接把缓存页面发给本应拦截的访客。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: website_access_control
+#: model:ir.ui.menu,name:website_access_control.menu_access_control_settings
+msgid "Settings"
+msgstr "设置"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__block_tw
+msgid "Taiwan"
+msgstr "中国台湾"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "The downloaded IP data looks incomplete, the current data is kept."
+msgstr "下载的 IP 数据不完整，已保留当前数据。"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "The number of days must be at least 1."
+msgstr "天数至少为 1。"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_form
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_list
+msgid "Time"
+msgstr "时间"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__token
+msgid "Token"
+msgstr "密钥"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_grant__enabled
+msgid "Turn off to revoke this person's access immediately."
+msgstr "关闭后此人的放行立即失效，其他人不受影响。"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__rule_type
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_rule_view_search
+msgid "Type"
+msgstr "类型"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__url
+msgid "URL"
+msgstr "访问网址"
+
+#. module: website_access_control
+#. odoo-python
+#: code:addons/website_access_control/models/access_config.py:0
+msgid "Unknown"
+msgstr "未知"
+
+#. module: website_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Update IP Data Now"
+msgstr "立即更新 IP 数据"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_rule__value
+msgid "Value"
+msgstr "值"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_log__ip
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_log_view_search
+msgid "Visitor IP"
+msgstr "访客 IP"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_grant__use_count
+msgid "Visits"
+msgstr "使用次数"
+
+#. module: website_access_control
+#: model_terms:ir.actions.act_window,help:website_access_control.action_website_access_log
+msgid ""
+"Visits that are blocked, would be blocked in Log Only mode, or are let "
+"through by a rule or an access link are listed here."
+msgstr "这里列出被拦截的访问、“仅记录”模式下本应拦截的访问，以及通过放行规则或放行链接进入的访问。"
+
+#. module: website_access_control
+#: model:res.groups.privilege,name:website_access_control.res_groups_privilege_access_control
+#: model_terms:ir.ui.view,arch_db:website_access_control.website_access_config_view_form
+msgid "Website Access Control"
+msgstr "网站访问控制"
+
+#. module: website_access_control
+#: model:ir.model,name:website_access_control.model_website_access_config
+msgid "Website Access Control Settings"
+msgstr "网站访问控制设置"
+
+#. module: website_access_control
+#: model:ir.actions.server,name:website_access_control.ir_cron_purge_logs_ir_actions_server
+msgid "Website Access Control: Purge Old Logs"
+msgstr "网站访问控制：清理过期日志"
+
+#. module: website_access_control
+#: model:ir.actions.server,name:website_access_control.ir_cron_update_ip_data_ir_actions_server
+msgid "Website Access Control: Update IP Data"
+msgstr "网站访问控制：更新 IP 数据"
+
+#. module: website_access_control
+#: model:ir.model,name:website_access_control.model_website_access_grant
+msgid "Website Access Link"
+msgstr "网站放行链接"
+
+#. module: website_access_control
+#: model:ir.model,name:website_access_control.model_website_access_log
+msgid "Website Access Log"
+msgstr "网站访问日志"
+
+#. module: website_access_control
+#: model:ir.model,name:website_access_control.model_website_access_rule
+msgid "Website Access Rule"
+msgstr "网站访问规则"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_config__enabled
+msgid "When disabled, the website is open to everyone and nothing is logged."
+msgstr "关闭时网站对所有人开放，也不记录日志。"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_rule__name
+msgid "Who or what this rule is for, e.g. 'Jinan office'."
+msgstr "这条规则是给谁或做什么用的，例如“济南办公室”。"
+
+#. module: website_access_control
+#: model:ir.model.fields,help:website_access_control.field_website_access_grant__name
+msgid "Who this access link is for, e.g. 'Mr. Wang (dealer)'."
+msgstr "这个放行链接发给谁，例如“王总(经销商)”。"
+
+#. module: website_access_control
+#: model:ir.model.fields.selection,name:website_access_control.selection__website_access_log__decision__logged
+msgid "Would Be Blocked"
+msgstr "应拦截(仅记录)"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__current_ip
+msgid "Your IP As Seen"
+msgstr "识别到的你的 IP"
+
+#. module: website_access_control
+#: model:ir.model.fields,field_description:website_access_control.field_website_access_config__current_country
+msgid "Your Region As Seen"
+msgstr "识别到的你的地区"

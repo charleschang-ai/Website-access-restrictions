@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="default_config" model="website.access.config"/>
+
+        <record id="ir_cron_update_ip_data" model="ir.cron">
+            <field name="name">Website Access Control: Update IP Data</field>
+            <field name="model_id" ref="model_website_access_config"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_update_ip_data()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="ir_cron_purge_logs" model="ir.cron">
+            <field name="name">Website Access Control: Purge Old Logs</field>
+            <field name="model_id" ref="model_website_access_log"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_purge()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

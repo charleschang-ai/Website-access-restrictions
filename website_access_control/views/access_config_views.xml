@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_access_config_view_form" model="ir.ui.view">
+        <field name="name">website.access.config.form</field>
+        <field name="model">website.access.config</field>
+        <field name="arch" type="xml">
+            <form string="Access Control Settings" create="0" delete="0" duplicate="0">
+                <header>
+                    <button name="action_update_ip_data" type="object" string="Update IP Data Now"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Website Access Control</h1>
+                    </div>
+                    <div class="alert alert-info" role="alert">
+                        Logged-in employees are never blocked. For other visitors the checks are, in order:
+                        allow rules → access link → block rules and blocked regions → everyone else is let through.
+                        The login page, backend, portal (/my) and payment callbacks are always reachable.
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="enabled" widget="boolean_toggle"/>
+                            <field name="mode" widget="radio"/>
+                        </group>
+                        <group string="Blocked Regions">
+                            <field name="block_cn"/>
+                            <field name="block_hk"/>
+                            <field name="block_mo"/>
+                            <field name="block_tw"/>
+                            <separator colspan="2"/>
+                            <field name="block_zh_browser" widget="boolean_toggle"/>
+                            <div colspan="2" class="text-muted">
+                                Blocks Chinese-language browsers whatever their IP, even behind a
+                                foreign VPN. May also hit overseas Chinese-speaking visitors: check
+                                the logs in Log Only mode first.
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Access Links">
+                            <field name="cookie_days"/>
+                            <div colspan="2">
+                                <button type="action" name="%(action_website_access_grant)d"
+                                        string="Manage Access Links" class="btn btn-secondary" icon="fa-link"/>
+                            </div>
+                            <div colspan="2" class="text-muted">
+                                One link per person. Disabling a link revokes only that person,
+                                the others keep working.
+                            </div>
+                        </group>
+                        <group string="Visitor IP">
+                            <field name="real_ip_header" placeholder="Ali-CDN-Real-IP"/>
+                            <field name="trusted_proxies" invisible="not real_ip_header"
+                                   placeholder="One CDN back-to-origin address or network per line"/>
+                            <div colspan="2" class="alert alert-warning mb-2" role="alert"
+                                 invisible="not real_ip_header or trusted_proxies">
+                                The Real IP Header is ignored until Trusted Proxies is filled in: add the
+                                addresses the CDN connects from (see "Connection Address" below).
+                            </div>
+                            <field name="current_ip"/>
+                            <field name="current_country"/>
+                            <field name="current_peer_ip"/>
+                            <div colspan="2" class="text-muted">
+                                Open this page through the public domain and check that "Your IP As Seen" is your real
+                                public IP, not the address of the CDN, before switching to Block mode.
+                                Make sure as well that the server only accepts connections from the CDN.
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Block Page">
+                            <field name="block_title"/>
+                            <field name="block_message"/>
+                        </group>
+                        <group string="Advanced">
+                            <field name="no_store_pages"/>
+                            <field name="exempt_paths" placeholder="/shop/payment/webhook"/>
+                            <field name="log_retention_days"/>
+                        </group>
+                    </group>
+                    <group string="IP Data">
+                        <group>
+                            <field name="ip_data_date"/>
+                            <field name="ip_cn_count"/>
+                        </group>
+                        <div class="text-muted">
+                            Region data comes from APNIC and is refreshed automatically every month.
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_access_config" model="ir.actions.act_window">
+        <field name="name">Access Control Settings</field>
+        <field name="res_model">website.access.config</field>
+        <field name="view_mode">form</field>
+        <field name="res_id" ref="default_config"/>
+    </record>
+
+</odoo>

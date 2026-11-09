@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_access_rule_view_list" model="ir.ui.view">
+        <field name="name">website.access.rule.list</field>
+        <field name="model">website.access.rule</field>
+        <field name="arch" type="xml">
+            <list string="Access Rules" editable="bottom" multi_edit="1" decoration-muted="not enabled">
+                <field name="sequence" widget="handle"/>
+                <field name="rule_type" decoration-success="rule_type == 'allow'" decoration-danger="rule_type == 'block'"
+                       decoration-bf="1"/>
+                <field name="match_type"/>
+                <field name="value" placeholder="1.2.3.4 / 1.2.3.0/24 / CN"/>
+                <field name="name"/>
+                <field name="hit_count"/>
+                <field name="last_hit"/>
+                <field name="enabled" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="website_access_rule_view_search" model="ir.ui.view">
+        <field name="name">website.access.rule.search</field>
+        <field name="model">website.access.rule</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="value"/>
+                <field name="name"/>
+                <filter name="allow" string="Allow" domain="[('rule_type', '=', 'allow')]"/>
+                <filter name="block" string="Block" domain="[('rule_type', '=', 'block')]"/>
+                <separator/>
+                <filter name="enabled" string="Enabled" domain="[('enabled', '=', True)]"/>
+                <filter name="inactive" string="Disabled" domain="[('enabled', '=', False)]"/>
+                <group>
+                    <filter name="group_type" string="Type" context="{'group_by': 'rule_type'}"/>
+                    <filter name="group_match" string="Match" context="{'group_by': 'match_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_website_access_rule" model="ir.actions.act_window">
+        <field name="name">Access Rules</field>
+        <field name="res_model">website.access.rule</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add an access rule</p>
+            <p>
+                <b>Allow</b> rules let an IP, a network or a country through even inside a blocked region,
+                e.g. the office internet connection. <b>Block</b> rules block an IP, a network or a country
+                that is not covered by the blocked regions.
+            </p>
+        </field>
+    </record>
+
+</odoo>

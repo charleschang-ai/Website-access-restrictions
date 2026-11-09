@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_access_grant_view_list" model="ir.ui.view">
+        <field name="name">website.access.grant.list</field>
+        <field name="model">website.access.grant</field>
+        <field name="arch" type="xml">
+            <list string="Access Links" editable="bottom" decoration-muted="not enabled">
+                <field name="name"/>
+                <field name="access_url" widget="CopyClipboardChar" readonly="1"/>
+                <field name="use_count"/>
+                <field name="last_used"/>
+                <field name="enabled" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_website_access_grant" model="ir.actions.act_window">
+        <field name="name">Access Links</field>
+        <field name="res_model">website.access.grant</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add an access link</p>
+            <p>Create one link per person and send it to them. Opening the link once lets that
+               person browse the website from a blocked region. Disabling a link revokes only
+               that person, the others keep working.</p>
+        </field>
+    </record>
+
+</odoo>

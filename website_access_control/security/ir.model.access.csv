@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_website_access_config_admin,website.access.config admin,model_website_access_config,group_access_admin,1,1,0,0
+access_website_access_rule_admin,website.access.rule admin,model_website_access_rule,group_access_admin,1,1,1,1
+access_website_access_grant_admin,website.access.grant admin,model_website_access_grant,group_access_admin,1,1,1,1
+access_website_access_log_admin,website.access.log admin,model_website_access_log,group_access_admin,1,0,0,1

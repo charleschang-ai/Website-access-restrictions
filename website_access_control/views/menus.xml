@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_access_control_root"
+              name="Access Control"
+              parent="website.menu_website_configuration"
+              sequence="90"
+              groups="group_access_admin"/>
+
+    <menuitem id="menu_access_control_settings"
+              name="Settings"
+              parent="menu_access_control_root"
+              action="action_website_access_config"
+              sequence="10"
+              groups="group_access_admin"/>
+
+    <menuitem id="menu_access_control_grants"
+              name="Access Links"
+              parent="menu_access_control_root"
+              action="action_website_access_grant"
+              sequence="15"
+              groups="group_access_admin"/>
+
+    <menuitem id="menu_access_control_rules"
+              name="Access Rules"
+              parent="menu_access_control_root"
+              action="action_website_access_rule"
+              sequence="20"
+              groups="group_access_admin"/>
+
+    <menuitem id="menu_access_control_logs"
+              name="Access Logs"
+              parent="menu_access_control_root"
+              action="action_website_access_log"
+              sequence="30"
+              groups="group_access_admin"/>
+
+</odoo>

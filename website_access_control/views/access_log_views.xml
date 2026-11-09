@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_access_log_view_list" model="ir.ui.view">
+        <field name="name">website.access.log.list</field>
+        <field name="model">website.access.log</field>
+        <field name="arch" type="xml">
+            <list string="Access Logs" create="0" edit="0">
+                <field name="create_date" string="Time"/>
+                <field name="ip"/>
+                <field name="country_code"/>
+                <field name="decision" widget="badge"
+                       decoration-danger="decision == 'blocked'"
+                       decoration-warning="decision == 'logged'"
+                       decoration-success="decision in ('allowed_rule', 'allowed_link')"
+                       decoration-info="decision == 'link_granted'"/>
+                <field name="reason"/>
+                <field name="rule_id" optional="show"/>
+                <field name="grant_id" optional="show"/>
+                <field name="url"/>
+                <field name="peer_ip" optional="hide"/>
+                <field name="user_agent" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="website_access_log_view_form" model="ir.ui.view">
+        <field name="name">website.access.log.form</field>
+        <field name="model">website.access.log</field>
+        <field name="arch" type="xml">
+            <form string="Access Log" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="create_date" string="Time"/>
+                            <field name="decision"/>
+                            <field name="reason"/>
+                            <field name="rule_id"/>
+                            <field name="grant_id"/>
+                        </group>
+                        <group>
+                            <field name="ip"/>
+                            <field name="country_code"/>
+                            <field name="peer_ip"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="url"/>
+                        <field name="user_agent"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="website_access_log_view_search" model="ir.ui.view">
+        <field name="name">website.access.log.search</field>
+        <field name="model">website.access.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ip"/>
+                <field name="country_code"/>
+                <field name="url"/>
+                <field name="rule_id"/>
+                <filter name="blocked" string="Blocked" domain="[('decision', 'in', ('blocked', 'logged'))]"/>
+                <filter name="allowed" string="Allowed" domain="[('decision', 'in', ('allowed_rule', 'allowed_link', 'link_granted'))]"/>
+                <separator/>
+                <filter name="filter_create_date" string="Date" date="create_date"/>
+                <group>
+                    <filter name="group_decision" string="Decision" context="{'group_by': 'decision'}"/>
+                    <filter name="group_country" string="Region" context="{'group_by': 'country_code'}"/>
+                    <filter name="group_ip" string="Visitor IP" context="{'group_by': 'ip'}"/>
+                    <filter name="group_day" string="Day" context="{'group_by': 'create_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_website_access_log" model="ir.actions.act_window">
+        <field name="name">Access Logs</field>
+        <field name="res_model">website.access.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No visit has been blocked yet</p>
+            <p>Visits that are blocked, would be blocked in Log Only mode, or are let through by a rule or an access link are listed here.</p>
+        </field>
+    </record>
+
+</odoo>

@@ -19,9 +19,9 @@ class WebsiteAccessGrant(models.Model):
     last_used = fields.Datetime(string='Last Visit', compute='_compute_usage')
 
     def _compute_access_url(self):
-        base_url = self.get_base_url()
+        # website's get_base_url() only accepts a single record
         for grant in self:
-            grant.access_url = grant.token and f'{base_url}/access/{grant.token}'
+            grant.access_url = grant.token and f'{grant.get_base_url()}/access/{grant.token}'
 
     def _compute_usage(self):
         stats = {
